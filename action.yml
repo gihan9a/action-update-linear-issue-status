@@ -1,0 +1,29 @@
+name: "Update Linear Issue Status"
+description: "A GitHub Action to update the status of Linear issues when PRs are merged."
+author: "Your Name"
+inputs:
+  linear_api_token:
+    description: "The Linear API Token"
+    required: true
+  linear_team_key:
+    description: "The Linear Team Key"
+    required: true
+  to_state_id:
+    description: "Update Linear issue to status ID"
+    required: true
+  dry_run:
+    description: "Whether to run in dry-run mode"
+    default: "true"
+    required: false
+runs:
+  using: "composite"
+  steps:
+    - name: Run update_linear_issue_status.sh
+      run: ./update_linear_issue_status.sh
+      shell: bash
+      env:
+        LINEAR_API_TOKEN: ${{ inputs.linear_api_token }}
+        LINEAR_TEAM_KEY: ${{ inputs.linear_team_key }}
+        TO_STATUS_ID: ${{ inputs.to_state_id }}
+        DRY_RUN: ${{ inputs.dry_run }}
+      working-directory: .
