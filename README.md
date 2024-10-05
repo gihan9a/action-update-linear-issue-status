@@ -22,4 +22,6 @@ jobs:
           linear_team_key: "<your-linear-team-key>"
           to_state_id: "<your-done-state-id>" 
           dry_run: "true"  # Set to false when ready to update
+          base_branch: "develop"
+          main_branch: "main"
 ```

@@ -11,6 +11,12 @@ inputs:
   to_state_id:
     description: "Update Linear issue to status ID"
     required: true
+  main_branch:
+    description: "Main branch which release branch merge into"
+    required: true
+  base_branch:
+    description: "Base branch for release branch"
+    required: true
   dry_run:
     description: "Whether to run in dry-run mode"
     default: "true"
