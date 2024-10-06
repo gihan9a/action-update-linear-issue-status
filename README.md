@@ -1,5 +1,7 @@
 # Update Linear Issues Status
 
+This linear issue status updater is a composite action that will update the status of Linear issues when PRs are merged into a give branch.
+
 
 ### Example
 ```yml

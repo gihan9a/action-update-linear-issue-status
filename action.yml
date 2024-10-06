@@ -17,6 +17,10 @@ inputs:
   base_branch:
     description: "Base branch for release branch"
     required: true
+  pr_limit:
+    description: "Number of github PRs to fetch. Default to 40"
+    default: "40"
+    required: false
   dry_run:
     description: "Whether to run in dry-run mode"
     default: "true"
