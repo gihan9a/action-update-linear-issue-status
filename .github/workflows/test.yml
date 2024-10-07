@@ -1,0 +1,22 @@
+name: Test
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  update-linear:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Update linear issues status
+        uses: gihan9a/action-update-linear-issue-status@main # Points to the public repo and version
+        with:
+          linear_api_token: ${{ secrets.LINEAR_API_TOKEN }}
+          linear_team_key: "WEB"
+          to_state_id: "d210e63f-29dd-4dbb-ad38-b778d414b0db"
+          base_branch: "develop"
+          main_branch: "main"
+          dry_run: true
